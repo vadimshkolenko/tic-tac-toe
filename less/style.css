@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+.game {
+  height: 450px;
+  width: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.game .field-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+  background: black;
+  margin: 0 auto;
+}
+.game .field-wrapper div {
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.game .field-wrapper .cell {
+  border-right: 5px solid white;
+  border-bottom: 5px solid white;
+  color: white;
+  font-size: 50px;
+  background: black;
+}
+.game .field-wrapper .cell:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+.game .field-wrapper .cell:active {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+.game .field-wrapper .cell-3,
+.game .field-wrapper .cell-6,
+.game .field-wrapper .cell-9 {
+  border-right: none;
+}
+.game .field-wrapper .cell-7,
+.game .field-wrapper .cell-8,
+.game .field-wrapper .cell-9 {
+  border-bottom: none;
+}
+.game .new-game {
+  width: 300px;
+  text-align: center;
+  border: 1px solid grey;
+  border-radius: 8px;
+  margin: 0 auto;
+  padding: 10px 0;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.game .new-game:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+@media screen and (min-width: 0) and (max-width: 560px) {
+  .game {
+    height: 300px;
+    width: 300px;
+  }
+  .game .field-wrapper div {
+    width: 100px;
+    height: 100px;
+  }
+}
