@@ -24,13 +24,21 @@ fieldWrapper.addEventListener('click', clickCell); // шаг игрока
 
 function clickCell(event) { // ставится крестик или нолик при нажатии
     const target = event.target;
-    if (player == 'cross' && !endGame && !dataZero.includes(Number(target.dataset.num)) && !dataCross.includes(Number(target.dataset.num))) {
+    if (player == 'cross' 
+        && !endGame 
+        && !dataZero.includes(Number(target.dataset.num)) 
+        && !dataCross.includes(Number(target.dataset.num))
+    ) {
         target.innerHTML = 'X';
         dataCross.push(Number(target.dataset.num));
         countSteps++;
         checkEnd(dataCross);
         player = 'zero';
-    } else if (player == 'zero' && !endGame && !dataZero.includes(Number(target.dataset.num)) && !dataCross.includes(Number(target.dataset.num))) {
+    } else if (player == 'zero' 
+                && !endGame 
+                && !dataZero.includes(Number(target.dataset.num)) 
+                && !dataCross.includes(Number(target.dataset.num))
+            ) {
         target.innerHTML = 'O';
         dataZero.push(Number(target.dataset.num));
         countSteps++;
